@@ -982,7 +982,7 @@
 
     <div id="top-answers">
       <h1 class="">Descobrindo o resultado</h1>
-      <p class="">Dessas questões abaixo, escolha as <b>3</b> que sejam as mais verdadeiras para você:</p>
+      <p class="">Dessas questões abaixo, ordenadas da maior nota que você deu para a menor, escolha as <b>3</b> que sejam as mais verdadeiras para você:</p>
       <div id="options" class="mb-5">
       </div>
       <button type="submit" id="select-top-answers" class="btn btn-primary btn-lg" disabled>Descobrir</button>
@@ -992,26 +992,35 @@
       <h1 class="mb-5"></h1>
       <p class="lead mb-4"></p>
       <button id="restart" class="btn btn-primary btn-lg mr-4">Reiniciar teste</button>
-      <a href="#all-anchors">Conheça todas as âncoras</a>
+      <a href="#all-anchors">Conheça todas as suas âncoras</a>
     </div>
 
     <div id="all-anchors">
-      <h1 class="mb-5">Conheça todas as âncoras</h1>
-      <h2>Competência Técnica/Funcional</h2>
+      <h1 class="mb-3"><b>Conheça todas as âncoras</b></h1>
+      <p class="lead">Cada âncora a seguir tem uma determinada influência na nossa motivação atual. É possível que duas delas tenham pesos muito parecidos para nós, ou que alguma esteja muito fora da nossa visão.</p>
+
+      <p class="lead">O questionário vai indicar qual dessas âncoras mais influência sua motivação e com essa resposta você pode entender melhor o seu momento e decidir o rumo que deve tomar.</p>
+
+      <p class="lead">Indico que você compartilhe seu resultado com seu líder/gestor para que ele possa te auxiliar a desenvolver. Ciente do que mais te motiva, ele pode ser determinante no seu crescimento profissional e pessoal.</p>
+
+      <p id="show-score-note" class="lead">Ao término do questionário, você consegue ver sua nota ao lado de cada âncora. Quanto mais alta a nota, mais importante essa âncora é para você.</p>
+
+
+      <h2>Competência Técnica/Funcional <span id="score-TF" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é a competência em alguma área técnica ou funcional, você não abriria mão da oportunidade de aplicar suas habilidades nessa área e de continuar desenvolvendo essas habilidades a um nível cada vez mais alto.<br><br>Você obtém seu senso de identidade com o exercício dessas habilidades e sente-se totalmente realizado quando seu trabalho lhe permite ser desafiado nessas áreas. Você pode estar disposto a gerenciar outras pessoas em sua área técnica ou funcional, mas não se interessa pelo gerenciamento em si e evitaria a gerência geral, porque precisaria desistir de sua própria área de especialidade</p>
-      <h2>Competência para Gerência Geral</h2>
+      <h2>Competência para Gerência Geral <span id="score-GG" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua ancora de carreira é a competência para a gerência geral, você não abriria mão da oportunidade de subir a um nível alto o suficiente que lhe permita integrar os esforços de outras pessoas em suas funções e ser responsável pelo resultado de determinada unidade da organização.<br><br>Você quer total responsabilidade pelos resultados e identifica seu próprio trabalho com o sucesso da organização para qual trabalha. Se você está em uma área técnica ou funcional atualmente, aceita a situação como uma experiência de aprendizado necessária; entretanto, ambiciona alcançar um cargo com funções generalistas o quanto antes. Ter um alto cargo gerencial técnico não interessa</p>
-      <h2>Autonomia/Independência</h2>
+      <h2>Autonomia/Independência <span id="score-AI" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é a autonomia/independência, você não renunciaria à oportunidade de definir seu próprio trabalho, à sua própria maneira. Se você está numa organização, quer permanecer em funções que lhe permitam flexibilidade com relação a quando e como trabalhar.<br><br>Se você não tolera regras e restrições organizacionais de qualquer espécie, busca ocupações nas quais tenha a liberdade que procura, tais como ensino ou consultoria. Para manter sua autonomia, você recusa oportunidades de promoção ou avanço. Talvez você até procure Ter seu próprio negócio para alcançar a sensação de autonomia; entretanto este motivo não é o mesmo que a criatividade empreendedora descrita mais adiante</p>
-      <h2>Segurança/Estabilidade</h2>
+      <h2>Segurança/Estabilidade <span id="score-SE" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é a segurança/estabilidade, você não abriria mão da sua segurança ou estabilidade no trabalho ou organização.Sua principal preocupação é alcançar a sensação de ser bem sucedido, para ficar tranqüilo. A âncora está demonstrada na preocupação pela segurança financeira (tais como aposentadoria e planos de pensão) ou segurança no emprego. Essa estabilidade pode significar trocar sua lealdade e disposição de fazer qualquer coisa que seu empregador lhe peça por uma promessa de garantia de emprego.<br><br>Você se preocupa menos com o conteúdo do seu trabalho e o posto que pode alcançar, embora possa chegar a um alto nível, se seus talentos assim o permitirem. No que se refere a autonomia, todo mundo tem certas necessidades de segurança e estabilidade,especialmente em épocas que os encargos financeiros são grandes ou quando se está para enfrentar a aposentadoria. Entretanto, as pessoas ancoradas dessa maneira estão sempre preocupadas com essas questões e constroem toda sua auto-imagem em torno do gerenciamento da segurança e estabilidade</p>
-      <h2>Criatividade Empreendedora</h2>
+      <h2>Criatividade Empreendedora <span id="score-CE" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é a criatividade empreendedora, você não renunciaria à oportunidade de criar sua própria organização ou empreendimento, desenvolvidas com sua própria capacidade e disposição de assumir riscos e superar obstáculos.<br><br>Você quer provar ao mundo que pode criar um empreendimento que seja o resultado do seu próprio esforço. Talvez você trabalhe para outros em alguma organização, enquanto aprende e avalia oportunidades futuras, mas seguirá seu próprio caminho assim que sentir que tem condições para isso. Você quer que seu empreendimento seja financeiramente bem sucedido, como prova de sua capacidade</p>
-      <h2>Serviço/Dedicação a uma Causa</h2>
+      <h2>Serviço/Dedicação a uma Causa <span id="score-SD" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é serviço/dedicação a uma causa, você não renunciaria à oportunidade de procurar um trabalho onde pudesse realizar alguma coisa útil, como por exemplo tornar o mundo um lugar melhor para se viver, solucionar problemas ambientais, melhorar a harmonia entre as pessoas, ajudar aos outros, melhorar a segurança das pessoas, curar doenças através de novos produtos, etc.<br><br>Você busca essas oportunidades, mesmo que isto signifique mudar de organização e não aceita transferências ou promoções que o desviem do trabalho que preencha esses valores</p>
-      <h2>Desafio Puro</h2>
+      <h2>Desafio Puro <span id="score-DP" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é desafio puro, você não abriria mão da oportunidade de trabalhar na solução de problemas aparentemente insolúveis, para vencer oponentes duros ou superar obstáculos difíceis. Para você, a única razão significativa para buscar um trabalho ou carreira é que este lhe permita vencer o impossível.<br><br>Algumas pessoas encontram esse desafio puro em alguns trabalhos intelectuais, como por exemplo, o engenheiro interessado apenas em desenhos extremamente difíceis; outras encontram seu desafio em situações complexas, tais como um consultor estrategista, interessado apenas em clientes à beira da falência e que já esgotaram todos os recursos; algumas o encontram na competição interpessoal, como o atleta profissional ou o vendedor que define cada venda como uma vitória ou derrota. A novidade, variedade e dificuldade tornam-se um fim em si e se alguma coisa é fácil, imediatamente torna-se monótona</p>
-      <h2>Estilo de Vida</h2>
+      <h2>Estilo de Vida <span id="score-EV" class="text-muted"></span></h2>
       <p class="lead mb-3">Se sua âncora de carreira é o estilo de vida, você não abriria mão de uma situação que lhe permita equilibrar e integrar suas necessidades pessoais, familiares e as exigências de sua carreira. Você quer fazer todos os principais segmentos de sua vida trabalhar em conjunto para um todo integrado e, portanto, precisa de uma situação de carreira que lhe dê suficiente flexibilidade para alcançar tal integração.<br><br>Talvez você precise sacrificar alguns aspectos da sua carreira (por exemplo, uma mudança geográfica que fosse uma promoção, mas que desestruturaria toda sua situação de vida), e você define o sucesso em termos mais amplos do que simplesmente sucesso na carreira. Você sente que sua identidade está mais vinculada ao modo de viver sua vida como um todo, onde você se estabelece, como lida com sua situação familiar e como você se desenvolve, do que com qualquer trabalho ou organização.</p>
       <a href="https://www.roberthalf.com.br/blog/carreira/teste-ancoras-de-carreira" target="blank">Conheça mais sobre o teste</a>
     </div>

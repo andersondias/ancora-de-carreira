@@ -124,6 +124,7 @@ $.fn.upform = function() {
     for (anchor_key in anchors) {
       var anchor = anchors[anchor_key];
       var score = anchor.questions.reduce(sumAnswers, 0) / 5.0;
+      $('#score-'+anchor_key).text('(Sua nota: '+ score + ')')
 
       if(score > greatest_score) {
         greatest_key = anchor_key;
@@ -162,6 +163,11 @@ $.fn.upform = function() {
     $(container).find('.input-block input[type="radio"]').prop('checked', false);
     rescroll($('#beginning'));
     $("#results").hide();
+    $("#top-answers").hide();
+    $('#top-answers .top-answer').each(function() { $(this).parent().remove()});
+    for (anchor_key in anchors) {
+      $('#score-'+anchor_key).text('');
+    }
   });
 
   $(window).on("scroll", function() {
@@ -182,7 +188,6 @@ $.fn.upform = function() {
       } else {
         answer = parseFloat(answer)
 
-        debugger;
         if(choosenTopAnswers.includes(question)) {
           answer = answer + 4
         }
