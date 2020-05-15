@@ -1,0 +1,174 @@
+/* PAGE & INPUT STYLING */
+body {
+  color: #333;
+  background: #f1ece4 url("anchor.png") no-repeat fixed top right;
+}
+
+.btn {
+  border: 1px solid #808080;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  position: relative;
+  text-align: left;
+  border-radius: 3px;
+  -webkit-transition: background 600ms ease, color 600ms ease;
+  transition: background 600ms ease, color 600ms ease;
+}
+.btn span {
+  border: 1px solid #808080;
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 12px;
+  border-radius: 5px;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: -5px;
+}
+
+input[type="radio"].toggle {
+  display: none;
+}
+input[type="radio"].toggle + label {
+  cursor: pointer;
+  min-width: 80px;
+  color: #555;
+}
+input[type="radio"].toggle + label:hover {
+  background: none;
+  color: #a19c94;
+}
+input[type="radio"].toggle + label:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: left 100ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: left 100ms cubic-bezier(0.77, 0, 0.175, 1);
+  width: 100%;
+  z-index: -1;
+}
+input[type="radio"].toggle.toggle-left + label {
+}
+input[type="radio"].toggle.toggle-left + label:after {
+  left: 100%;
+}
+input[type="radio"].toggle.toggle-right + label {
+  margin-left: 10px;
+}
+input[type="radio"].toggle.toggle-right + label:after {
+  left: -100%;
+}
+input[type="radio"].toggle:checked + label {
+  background: #c1bcb4;
+  cursor: default;
+  color: #333;
+}
+input[type="radio"].toggle:checked + label:after {
+  left: 0;
+}
+
+/* ENDS */
+
+/* UPFORM STYLE STARTS*/
+.upform input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
+  border-color: blue !important;
+}
+.upform input, select, textarea {
+  background-color: #333 !important;
+  color: #FFF;
+}
+.upform {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+		            supported by Chrome and Opera */
+  max-width: 900px;
+  margin: 300px auto;
+  margin-bottom: 500px;
+  padding: 0 20px;
+}
+
+.upform .upform-main {
+}
+.upform .upform-main .input-block {
+  padding: 30px 0;
+  opacity: 0.25;
+  cursor: default;
+}
+.upform .upform-main .input-block .label {
+  display: block;
+  font-size: 1.1em;
+  line-height: 30px;
+}
+.upform .upform-main .input-block .input-control {
+  margin: 5px 0 20px;
+}
+.upform .upform-main .input-block .input-control input[type=text] {
+  border: none;
+  outline-width: 0;
+  border-bottom: 2px solid #CCC;
+  width: 100%;
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.upform .upform-main .input-block.active {
+  opacity: 1;
+}
+
+.upform .upform-footer {
+  margin-top: 60px;
+}
+.upform .upform-footer .btn {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+/* UPFORM STYLE ENDS*/
+
+.explanation {
+  font-size: 0.9em;
+  color: #f1ece4;
+  margin: 20px 0 5px;
+}
+
+.explanation span {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  background-color: #444;
+}
+.explanation span.s1 {
+  width: 80px;
+}
+
+.explanation span.s2 {
+  width: 175px;
+
+}
+
+#top-answers, #results, #all-anchors {
+  /*display: none;*/
+  margin-top: 500px
+}
+
+
+#top-answers, #results {
+  display: none;
+}
+
+.btn-primary {
+  background-color: #333;
+  border-color: #111;
+}
+
+.btn-primary:disabled {
+  background-color: #AAA;
+  border-color: #999;
+}
