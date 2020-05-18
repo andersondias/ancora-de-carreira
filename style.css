@@ -96,9 +96,9 @@ input[type="radio"].toggle:checked + label:after {
 .upform .upform-main {
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .upform {
-    margin: 0px auto;
+    margin: 0px auto 100px;
   }
 }
 .upform .upform-main .input-block {
