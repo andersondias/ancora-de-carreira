@@ -33,6 +33,7 @@ input[type="radio"].toggle + label {
   cursor: pointer;
   min-width: 80px;
   color: #555;
+  text-align: center;
 }
 input[type="radio"].toggle + label:hover {
   background: none;
@@ -53,9 +54,7 @@ input[type="radio"].toggle.toggle-left + label {
 input[type="radio"].toggle.toggle-left + label:after {
   left: 100%;
 }
-input[type="radio"].toggle.toggle-right + label {
-  margin-left: 10px;
-}
+
 input[type="radio"].toggle.toggle-right + label:after {
   left: -100%;
 }
@@ -136,7 +135,6 @@ input[type="radio"].toggle:checked + label:after {
 .explanation {
   font-size: 0.9em;
   color: #f1ece4;
-  margin: 5px 5px 5px;
   display: inline-block;
 }
 
@@ -145,14 +143,6 @@ input[type="radio"].toggle:checked + label:after {
   margin-bottom: 5px;
   text-align: center;
   background-color: #444;
-}
-.explanation span.s1 {
-  width: 80px;
-}
-
-.explanation span.s2 {
-  width: 175px;
-
 }
 
 #top-answers, #results, #all-anchors {
