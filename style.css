@@ -31,7 +31,7 @@ input[type="radio"].toggle {
 }
 input[type="radio"].toggle + label {
   cursor: pointer;
-  min-width: 80px;
+  min-width: 3.6em;
   color: #555;
   text-align: center;
 }
