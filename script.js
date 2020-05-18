@@ -47,10 +47,15 @@ $.fn.upform = function() {
   var choosenTopAnswers = [];
 
   $(document).ready(function() {
-    $(container).find(".input-block").first().click();
+    var previousResult = getQueryVariable("r");
+    if(Object.keys(anchors).includes(previousResult)) {
+      scroolToResults(previousResult)
+    } else {
+      $(container).find(".input-block").first().click();
+    }
   });
 
-  var greatest_key;
+  var greatestKey;
 
   $($this).find("form").submit(function() {
       return false;
@@ -115,29 +120,23 @@ $.fn.upform = function() {
     }
   });
 
-
   $('#select-top-answers').click(function(){
     choosenTopAnswers = $('#top-answers .top-answer:checked').map(function(){ return parseInt($(this).val()) }).toArray()
-    var anchor_key;
-    var greatest_score = 0;
+    var anchorKey;
+    var greatestScore = 0;
 
-    for (anchor_key in anchors) {
-      var anchor = anchors[anchor_key];
+    for (anchorKey in anchors) {
+      var anchor = anchors[anchorKey];
       var score = anchor.questions.reduce(sumAnswers, 0) / 5.0;
-      $('#score-'+anchor_key).text('(Sua nota: '+ score + ')')
+      $('#score-'+anchorKey).text('(Sua nota: '+ score + ')')
 
-      if(score > greatest_score) {
-        greatest_key = anchor_key;
-        greatest_score = score;
+      if(score > greatestScore) {
+        greatestKey = anchorKey;
+        greatestScore = score;
       }
     }
 
-    var final_anchor = anchors[greatest_key];
-    $("#results h1").html("Sua âncora de carreira atual é <br><b>"+ final_anchor.title+"</b>");
-    $("#results p").html(final_anchor.description);
-    $("#results").show();
-
-    rescroll($("#results"));
+    scroolToResults(greatestKey);
     return false;
   });
 
@@ -165,9 +164,25 @@ $.fn.upform = function() {
     $("#results").hide();
     $("#top-answers").hide();
     $('#top-answers .top-answer').each(function() { $(this).parent().remove()});
-    for (anchor_key in anchors) {
-      $('#score-'+anchor_key).text('');
+    for (anchorKey in anchors) {
+      $('#score-'+anchorKey).text('');
     }
+    if (history.pushState) {
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.pushState({path: newurl},'',newurl);
+      }
+  });
+
+  $('#copy').click(function(e) {
+    var el = document.createElement('textarea');
+    el.value = 'A minha âncora de carreira atual é: ';
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
   });
 
   $(window).on("scroll", function() {
@@ -180,6 +195,32 @@ $.fn.upform = function() {
       }
     });
   });
+
+  function scroolToResults(greatestKey) {
+    var anchor = anchors[greatestKey];
+    $("#results h1").html("Sua âncora de carreira atual é <br><b>"+ anchor.title+"</b>");
+    $("#results p").html(anchor.description);
+    $("#results").show();
+
+    var shareSubject = encodeURI("Minha âncora de carreira atualmente é " + anchor.title + ". Descubra mais sobre âncoras de carreira.");
+    var shareLink = encodeURI("https://andersondias.github.io/ancora-de-carreira/?r=" + greatestKey);
+
+    var emailBody = "Recentemente descobri que minha âncora de carreira atualmente é " + anchor.title + ".";
+        emailBody += " Você pode ver mais detalhes sobre minha âncora em " + shareLink + ".";
+    var emailHref = "mailto:?subject="+ shareSubject+ "&body=" + encodeURI(emailBody)
+    $("#share-email").attr('href', emailHref)
+
+    var facebookHref= "https://www.facebook.com/sharer/sharer.php?u=" + shareLink + "&quote=" + shareSubject;
+    $("#share-facebook").attr('href', facebookHref)
+
+    var twitterHref = "https://twitter.com/intent/tweet?source="+shareLink+"&text=" + shareSubject + ":%20" + shareLink;
+    $("#share-twitter").attr('href', twitterHref)
+
+    var linkedinHref = "http://www.linkedin.com/shareArticle?url=" + shareLink + "&title="+ shareSubject + "&summary=&source=" + shareLink;
+    $("#share-linkedin").attr('href', linkedinHref)
+
+    rescroll($("#results"));
+  }
 
   function sumAnswers(total, question) {
       var answer = $('input[name = "q' + question + '"]:checked').val();
@@ -223,6 +264,17 @@ $.fn.upform = function() {
 
   function movePrev(e) {
     $(e).parent().parent().prev().click();
+  }
+
+  function getQueryVariable(variable)
+  {
+         var query = window.location.search.substring(1);
+         var vars = query.split("&");
+         for (var i=0;i<vars.length;i++) {
+                 var pair = vars[i].split("=");
+                 if(pair[0] == variable){return pair[1];}
+         }
+         return(false);
   }
 };
 

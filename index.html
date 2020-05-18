@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./style.css?5">
+  <link rel="stylesheet" href="./style.css?6">
 
 </head>
 <body>
@@ -1232,8 +1232,35 @@
     <div id="results">
       <h1 class="mb-5"></h1>
       <p class="lead mb-4"></p>
-      <button id="restart" class="btn btn-primary btn-lg mr-4">Reiniciar teste</button>
+      <button id="restart" class="btn btn-primary btn-lg mr-2">Reiniciar teste</button>
+      <button type="button" class="btn btn-secondary mr-2" data-toggle="modal" data-target="#shareResults">Compartilhar resultado</button>
       <a href="#all-anchors">Conheça todas as suas âncoras</a>
+    </div>
+
+
+    <div class="modal fade" id="shareResults" tabindex="-1" role="dialog" aria-labelledby="shareResultsLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="shareResultsLabel">Compartilhe seus resultados</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Ao compartilhar sua âncora de carreira atual com mentores, gestores ou líderes você pode conseguir uma ajuda para crescer na sua carreira.</p>
+
+            <p>Compartilhar via:</p>
+
+            <ul class="share-buttons">
+              <li><a id="share-email" href="mailto:?subject=Minha%20%C3%A2ncora%20de%20carreira%20atualmente%20%C3%A9%20X.%20Descubra%20mais%20sobre%20%C3%A2ncoras%20de%20carreiras.&body=:%20https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F" target="_blank" title="Enviar e-mail"><img alt="Enviar e-mail" src="./images/flat_web_icon_set/color/Email.png" /></a></li>
+              <li><a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F&quote=Minha%20%C3%A2ncora%20de%20carreira%20atualmente%20%C3%A9%20X.%20Descubra%20mais%20sobre%20%C3%A2ncoras%20de%20carreiras." title="Compartilhar no Facebook" target="_blank"><img alt="Compartilhar no Facebook" src="./images/flat_web_icon_set/color/Facebook.png" /></a></li>
+              <li><a id="share-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F&text=Minha%20%C3%A2ncora%20de%20carreira%20atualmente%20%C3%A9%20X.%20Descubra%20mais%20sobre%20%C3%A2ncoras%20de%20carreiras.:%20https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F" target="_blank" title="Tweet"><img alt="Tweet" src="./images/flat_web_icon_set/color/Twitter.png" /></a></li>
+              <li><a id="share-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F&title=Minha%20%C3%A2ncora%20de%20carreira%20atualmente%20%C3%A9%20X.%20Descubra%20mais%20sobre%20%C3%A2ncoras%20de%20carreiras.&summary=&source=https%3A%2F%2Fandersondias.github.io%2Fancora-de-carreira%2F" target="_blank" title="Compartilhar no LinkedIn"><img alt="Compartilhar no LinkedIn" src="./images/flat_web_icon_set/color/LinkedIn.png" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="all-anchors">
@@ -1270,7 +1297,10 @@
   </div>
 
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js'></script><script  src="./script.js"></script>
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js'></script>
+  <script  src="./script.js?1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <footer class="text-secondary">Desenvolvido por <a href="https://twitter.com/extendsmymind" target="_blank" class="text-secondary">Anderson Dias</a></footer>
 </body>
 </html>
