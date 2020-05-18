@@ -4,7 +4,7 @@ $.fn.upform = function() {
   var anchors = {
     "TF": {
       "questions": [1,9,17,25,33],
-      "title": "Competência Técnica/Funcional",
+      "title": "Competência Técnica / Funcional",
       "description": "Se sua âncora de carreira é a competência em alguma área técnica ou funcional, você não abriria mão da oportunidade de aplicar suas habilidades nessa área e de continuar desenvolvendo essas habilidades a um nível cada vez mais alto.<br><br>Você obtém seu senso de identidade com o exercício dessas habilidades e sente-se totalmente realizado quando seu trabalho lhe permite ser desafiado nessas áreas. Você pode estar disposto a gerenciar outras pessoas em sua área técnica ou funcional, mas não se interessa pelo gerenciamento em si e evitaria a gerência geral, porque precisaria desistir de sua própria área de especialidade."
     },
     "GG": {
@@ -14,12 +14,12 @@ $.fn.upform = function() {
     },
     "AI": {
       "questions": [3, 11, 19, 27, 35],
-      "title": "Autonomia/Independência",
+      "title": "Autonomia / Independência",
       "description": "Se sua âncora de carreira é a autonomia/independência, você não renunciaria à oportunidade de definir seu próprio trabalho, à sua própria maneira. Se você está numa organização, quer permanecer em funções que lhe permitam flexibilidade com relação a quando e como trabalhar.<br><br>Se você não tolera regras e restrições organizacionais de qualquer espécie, busca ocupações nas quais tenha a liberdade que procura, tais como ensino ou consultoria. Para manter sua autonomia, você recusa oportunidades de promoção ou avanço. Talvez você até procure Ter seu próprio negócio para alcançar a sensação de autonomia; entretanto este motivo não é o mesmo que a criatividade empreendedora descrita mais adiante."
     },
     "SE": {
       "questions": [4, 12, 20, 28, 36],
-      "title": "Segurança/Estabilidade",
+      "title": "Segurança / Estabilidade",
       "description": "Se sua âncora de carreira é a segurança/estabilidade, você não abriria mão da sua segurança ou estabilidade no trabalho ou organização.<br><br>Sua principal preocupação é alcançar a sensação de ser bem sucedido, para ficar tranqüilo. A âncora está demonstrada na preocupação pela segurança financeira (tais como aposentadoria e planos de pensão) ou segurança no emprego. Essa estabilidade pode significar trocar sua lealdade e disposição de fazer qualquer coisa que seu empregador lhe peça por uma promessa de garantia de emprego. Você se preocupa menos com o conteúdo do seu trabalho e o posto que pode alcançar, embora possa chegar a um alto nível, se seus talentos assim o permitirem. No que se refere a autonomia, todo mundo tem certas necessidades de segurança e estabilidade,especialmente em épocas que os encargos financeiros são grandes ou quando se está para enfrentar a aposentadoria. Entretanto, as pessoas ancoradas dessa maneira estão sempre preocupadas com essas questões e constroem toda sua auto-imagem em torno do gerenciamento da segurança e estabilidade."
     },
     "CE": {
@@ -29,7 +29,7 @@ $.fn.upform = function() {
     },
     "SD": {
       "questions": [6,14,22,30,38],
-      "title": "Serviço/Dedicação a uma Causa",
+      "title": "Serviço / Dedicação a uma Causa",
       "description": "Se sua âncora de carreira é serviço/dedicação a uma causa, você não renunciaria à oportunidade de procurar um trabalho onde pudesse realizar alguma coisa útil, como por exemplo tornar o mundo um lugar melhor para se viver, solucionar problemas ambientais, melhorar a harmonia entre as pessoas, ajudar aos outros, melhorar a segurança das pessoas, curar doenças através de novos produtos, etc.<br><br>Você busca essas oportunidades, mesmo que isto signifique mudar de organização e não aceita transferências ou promoções que o desviem do trabalho que preencha esses valores."
     },
     "DP": {
