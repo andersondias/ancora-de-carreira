@@ -98,7 +98,7 @@ input[type="radio"].toggle:checked + label:after {
 
 @media (max-width: 576px) {
   .upform {
-    margin: 0px auto 100px;
+    margin: 150px auto 100px;
   }
 }
 .upform .upform-main .input-block {
