@@ -110,7 +110,7 @@ $.fn.upform = function() {
 
   var maxNumberOfTopAnswers = 3;
   $('#top-answers').on('change', '.top-answer', function(evt) {
-    var choosenAnswers = $(this).closest('.input-block').find('.top-answer:checked').length;
+    var choosenAnswers = $(this).parent().parent().find('.top-answer:checked').length;
     if(choosenAnswers > maxNumberOfTopAnswers) {
        this.checked = false;
     } else if(choosenAnswers == maxNumberOfTopAnswers) {
