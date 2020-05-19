@@ -110,7 +110,7 @@ $.fn.upform = function() {
 
   var maxNumberOfTopAnswers = 3;
   $('#top-answers').on('change', '.top-answer', function(evt) {
-    var choosenAnswers = $(this).parent().parent().find('.top-answer:checked').length;
+    var choosenAnswers = $(this).closest('.input-block').find('.top-answer:checked').length;
     if(choosenAnswers > maxNumberOfTopAnswers) {
        this.checked = false;
     } else if(choosenAnswers == maxNumberOfTopAnswers) {
@@ -259,11 +259,11 @@ $.fn.upform = function() {
   }
 
   function moveNext(e) {
-    $(e).parent().parent().next().click();
+    $(e).closest('.input-block').next().click();
   }
 
   function movePrev(e) {
-    $(e).parent().parent().prev().click();
+    $(e).closest('.input-block').prev().click();
   }
 
   function getQueryVariable(variable)
