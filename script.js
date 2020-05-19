@@ -173,18 +173,6 @@ $.fn.upform = function() {
       }
   });
 
-  $('#copy').click(function(e) {
-    var el = document.createElement('textarea');
-    el.value = 'A minha âncora de carreira atual é: ';
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-  });
-
   $(window).on("scroll", function() {
     $(container).find(".input-block").each(function() {
       var etop = $(this).offset().top;
@@ -202,21 +190,26 @@ $.fn.upform = function() {
     $("#results p").html(anchor.description);
     $("#results").show();
 
-    var shareSubject = encodeURI("Minha âncora de carreira atualmente é " + anchor.title + ". Descubra mais sobre âncoras de carreira.");
-    var shareLink = encodeURI("https://andersondias.github.io/ancora-de-carreira/?r=" + greatestKey);
+
+    var shareSubject = "Minha âncora de carreira atualmente é " + anchor.title + ". Descubra mais sobre âncoras de carreira.";
+    var encodedShareSubject = encodeURI(shareSubject);
+    var shareLink = "https://andersondias.github.io/ancora-de-carreira/?r=" + greatestKey;
+    var endodedShareLink = encodeURI(shareLink);
+
+    $("#share-link").attr('href', shareLink);
 
     var emailBody = "Recentemente descobri que minha âncora de carreira atualmente é " + anchor.title + ".";
-        emailBody += " Você pode ver mais detalhes sobre minha âncora em " + shareLink + ".";
-    var emailHref = "mailto:?subject="+ shareSubject+ "&body=" + encodeURI(emailBody)
+        emailBody += " Você pode ver mais detalhes sobre minha âncora em " + endodedShareLink + ".";
+    var emailHref = "mailto:?subject="+ encodedShareSubject+ "&body=" + encodeURI(emailBody)
     $("#share-email").attr('href', emailHref)
 
-    var facebookHref= "https://www.facebook.com/sharer/sharer.php?u=" + shareLink + "&quote=" + shareSubject;
+    var facebookHref= "https://www.facebook.com/sharer/sharer.php?u=" + endodedShareLink + "&quote=" + encodedShareSubject;
     $("#share-facebook").attr('href', facebookHref)
 
-    var twitterHref = "https://twitter.com/intent/tweet?source="+shareLink+"&text=" + shareSubject + ":%20" + shareLink;
+    var twitterHref = "https://twitter.com/intent/tweet?source="+endodedShareLink+"&text=" + encodedShareSubject + ":%20" + endodedShareLink;
     $("#share-twitter").attr('href', twitterHref)
 
-    var linkedinHref = "http://www.linkedin.com/shareArticle?url=" + shareLink + "&title="+ shareSubject + "&summary=&source=" + shareLink;
+    var linkedinHref = "http://www.linkedin.com/shareArticle?url=" + endodedShareLink + "&title="+ encodedShareSubject + "&summary=&source=" + endodedShareLink;
     $("#share-linkedin").attr('href', linkedinHref)
 
     rescroll($("#results"));
