@@ -49,7 +49,11 @@ $.fn.upform = function() {
   $(document).ready(function() {
     var previousResult = getQueryVariable("r");
     if(Object.keys(anchors).includes(previousResult)) {
-      scroolToResults(previousResult)
+      var scoreByAnchors = {};
+      for(anchorKey in anchors) {
+        scoreByAnchors[anchorKey] = getQueryVariable(anchorKey);
+      }
+      scroolToResults(previousResult, scoreByAnchors);
     } else {
       $(container).find(".input-block").first().click();
     }
@@ -124,11 +128,12 @@ $.fn.upform = function() {
     choosenTopAnswers = $('#top-answers .top-answer:checked').map(function(){ return parseInt($(this).val()) }).toArray()
     var anchorKey;
     var greatestScore = 0;
+    var scoreByAnchors = {};
 
     for (anchorKey in anchors) {
       var anchor = anchors[anchorKey];
       var score = anchor.questions.reduce(sumAnswers, 0) / 5.0;
-      $('#score-'+anchorKey).text('(Sua nota: '+ score + ')')
+      scoreByAnchors[anchorKey] = score;
 
       if(score > greatestScore) {
         greatestKey = anchorKey;
@@ -136,7 +141,7 @@ $.fn.upform = function() {
       }
     }
 
-    scroolToResults(greatestKey);
+    scroolToResults(greatestKey, scoreByAnchors);
     return false;
   });
 
@@ -184,23 +189,31 @@ $.fn.upform = function() {
     });
   });
 
-  function scroolToResults(greatestKey) {
+  function scroolToResults(greatestKey, scoreByAnchors) {
     var anchor = anchors[greatestKey];
     $("#results h1").html("Sua âncora de carreira atual é <br><b>"+ anchor.title+"</b>");
     $("#results p").html(anchor.description);
     $("#results").show();
 
-
     var shareSubject = "Minha âncora de carreira atualmente é " + anchor.title + ". Descubra mais sobre âncoras de carreira.";
-    var encodedShareSubject = encodeURI(shareSubject);
+    var encodedShareSubject = encodeURIComponent(shareSubject);
     var shareLink = "https://andersondias.github.io/ancora-de-carreira/?r=" + greatestKey;
-    var endodedShareLink = encodeURI(shareLink);
+    var scoreByAnchor;
+    for(anchorKey in scoreByAnchors) {
+      scoreByAnchor = scoreByAnchors[anchorKey]
+      if(scoreByAnchor) {
+        shareLink += "&" + anchorKey + "=" + scoreByAnchor;
+        $('#score-'+anchorKey).text(' (Sua nota: '+ scoreByAnchor + ')');
+      }
+    }
+
+    var endodedShareLink = encodeURIComponent(shareLink);
 
     $("#share-link").attr('href', shareLink);
 
     var emailBody = "Recentemente descobri que minha âncora de carreira atualmente é " + anchor.title + ".";
-        emailBody += " Você pode ver mais detalhes sobre minha âncora em " + endodedShareLink + ".";
-    var emailHref = "mailto:?subject="+ encodedShareSubject+ "&body=" + encodeURI(emailBody)
+        emailBody += " Você pode ver mais detalhes sobre minha âncora em " + shareLink + ".";
+    var emailHref = "mailto:?subject="+ encodedShareSubject+ "&body=" + encodeURIComponent(emailBody)
     $("#share-email").attr('href', emailHref)
 
     var facebookHref= "https://www.facebook.com/sharer/sharer.php?u=" + endodedShareLink + "&quote=" + encodedShareSubject;
@@ -209,7 +222,7 @@ $.fn.upform = function() {
     var twitterHref = "https://twitter.com/intent/tweet?source="+endodedShareLink+"&text=" + encodedShareSubject + ":%20" + endodedShareLink;
     $("#share-twitter").attr('href', twitterHref)
 
-    var linkedinHref = "http://www.linkedin.com/shareArticle?url=" + endodedShareLink + "&title="+ encodedShareSubject + "&summary=&source=" + endodedShareLink;
+    var linkedinHref = "https://www.linkedin.com/sharing/share-offsite/?url=" + endodedShareLink + "&title="+ encodedShareSubject + "&summary=&source=" + endodedShareLink;
     $("#share-linkedin").attr('href', linkedinHref)
 
     rescroll($("#results"));
