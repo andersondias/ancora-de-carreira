@@ -163,7 +163,7 @@ $.fn.upform = function() {
     moveNext(this);
   });
 
-  $('#restart').click(function(e) {
+  $('.restart').click(function(e) {
     $(container).find('.input-block input[type="radio"]').prop('checked', false);
     rescroll($('#beginning'));
     $("#results").hide();

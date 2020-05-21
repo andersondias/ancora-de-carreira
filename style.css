@@ -146,7 +146,7 @@ input[type="radio"].toggle:checked + label:after {
   background-color: #444;
 }
 
-#top-answers, #results, #all-anchors {
+#top-answers, #results {
   margin-top: 500px
 }
 
@@ -204,7 +204,7 @@ ul.share-buttons .sr-only{
   .upform {
     margin: 150px auto 100px;
   }
-  #top-answers, #results, #all-anchors {
+  #top-answers, #results {
   margin-top: 350px;
   }
 }
