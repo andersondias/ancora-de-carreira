@@ -197,7 +197,7 @@ $.fn.upform = function() {
 
     var shareSubject = "Minha âncora de carreira atualmente é " + anchor.title + ". Descubra mais sobre âncoras de carreira.";
     var encodedShareSubject = encodeURIComponent(shareSubject);
-    var shareLink = "https://andersondias.github.io/ancora-de-carreira/?r=" + greatestKey;
+    var shareLink = "https://andersondias.com.br/ancora-de-carreira/?r=" + greatestKey;
     var scoreByAnchor;
     for(anchorKey in scoreByAnchors) {
       scoreByAnchor = scoreByAnchors[anchorKey]
