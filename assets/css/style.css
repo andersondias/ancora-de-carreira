@@ -1,7 +1,7 @@
 /* PAGE & INPUT STYLING */
 body {
   color: #333;
-  background: #f1ece4 url("anchor.png") no-repeat fixed top right;
+  background: #f1ece4 url("../images/anchor.png") no-repeat fixed top right;
 }
 
 .btn {
@@ -72,13 +72,15 @@ input[type="radio"].toggle:checked + label:after {
 /* UPFORM STYLE STARTS*/
 .upform input:focus, select:focus, textarea:focus, button:focus {
   outline: none;
-  border-color: blue !important;
+  borde
+  r-color: blue !important;
 }
 .upform input, select, textarea {
   background-color: #333 !important;
-  color: #FFF;
+  color
+  : #FFF;
 }
-.upform {
+.upform, #result {
   font-family: 'Open Sans', sans-serif;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -86,33 +88,38 @@ input[type="radio"].toggle:checked + label:after {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
-		            supported by Chrome and Opera */
+                supported by Chrome and Opera */
   max-width: 900px;
   margin: 300px auto;
   margin-bottom: 500px;
   padding: 0 20px;
 }
 
-.upform .upform-main {
+#result {
+  margin: 150px auto;
 }
 
 .upform .upform-main .input-block {
   padding: 30px 0;
-  opacity: 0.25;
+  opaci
+  ty: 0.25;
   cursor: default;
 }
 .upform .upform-main .input-block .label {
   display: block;
-  font-size: 1.1em;
+  font-
+  size: 1.1em;
   line-height: 30px;
   margin-bottom: 15px;
 }
 .upform .upform-main .input-block .input-control {
   margin: 5px 0 20px;
 }
+
 .upform .upform-main .input-block .input-control input[type=text] {
   border: none;
-  outline-width: 0;
+  outli
+  ne-width: 0;
   border-bottom: 2px solid #CCC;
   width: 100%;
   font-size: 35px;
@@ -126,6 +133,7 @@ input[type="radio"].toggle:checked + label:after {
 .upform .upform-footer {
   margin-top: 60px;
 }
+
 .upform .upform-footer .btn {
   font-size: 24px;
   font-weight: bold;
@@ -146,12 +154,8 @@ input[type="radio"].toggle:checked + label:after {
   background-color: #444;
 }
 
-#top-answers, #results {
-  margin-top: 500px
-}
-
-
-#top-answers, #results {
+#top-answers {
+  margin-top: 500px;
   display: none;
 }
 
@@ -204,6 +208,11 @@ ul.share-buttons .sr-only{
   .upform {
     margin: 150px auto 100px;
   }
+
+  #result {
+    margin: 50px auto 100px;
+  }
+
   #top-answers, #results {
   margin-top: 350px;
   }
