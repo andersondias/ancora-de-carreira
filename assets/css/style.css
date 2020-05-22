@@ -210,7 +210,11 @@ ul.share-buttons .sr-only{
     margin: 50px auto 100px;
   }
 
-  #top-answers, #results {
-  margin-top: 350px;
+  #top-answers {
+    margin-top: 350px;
+  }
+
+  footer {
+    font-size: 10px;
   }
 }
