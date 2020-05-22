@@ -72,8 +72,7 @@ input[type="radio"].toggle:checked + label:after {
 /* UPFORM STYLE STARTS*/
 .upform input:focus, select:focus, textarea:focus, button:focus {
   outline: none;
-  borde
-  r-color: blue !important;
+  border-color: blue !important;
 }
 .upform input, select, textarea {
   background-color: #333 !important;
@@ -101,8 +100,7 @@ input[type="radio"].toggle:checked + label:after {
 
 .upform .upform-main .input-block {
   padding: 30px 0;
-  opaci
-  ty: 0.25;
+  opacity: 0.25;
   cursor: default;
 }
 .upform .upform-main .input-block .label {
@@ -118,8 +116,7 @@ input[type="radio"].toggle:checked + label:after {
 
 .upform .upform-main .input-block .input-control input[type=text] {
   border: none;
-  outli
-  ne-width: 0;
+  outline-width: 0;
   border-bottom: 2px solid #CCC;
   width: 100%;
   font-size: 35px;
