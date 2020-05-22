@@ -202,11 +202,7 @@ ul.share-buttons .sr-only{
 }
 
 @media (max-width: 576px) {
-  .upform {
-    margin: 50px auto 100px;
-  }
-
-  #result {
+  .upform, #result {
     margin: 50px auto 100px;
   }
 
@@ -215,6 +211,6 @@ ul.share-buttons .sr-only{
   }
 
   footer {
-    font-size: 10px;
+    font-size: 8px;
   }
 }
