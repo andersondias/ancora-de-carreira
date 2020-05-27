@@ -5,8 +5,8 @@ layout: default
   <div id="results">
     <h1 class="mb-5">Sua âncora de carreira atual é <br><b id="anchor-title">{{ page.anchor.title }}</b></h1>
     <p class="lead mb-4">{{ page.anchor.description }}</p>
-    <button type="button" class="btn btn-primary btn-lg mr-2 mb-2" data-toggle="modal" data-target="#shareResults">Compartilhar resultado</button>
-    <a class="btn btn-secondary mr-2 mb-2" href="{{site.url}}">Iniciar novo teste</a>
+
+    {% include actions.html %}
   </div>
 
   <div id="all-anchors">
@@ -40,9 +40,7 @@ layout: default
     <h5><b>Estilo de Vida</b><span id="score-EV" class="text-muted"></span></h5>
     <p class="mb-3">Se sua âncora de carreira é o estilo de vida, você não abriria mão de uma situação que lhe permita equilibrar e integrar suas necessidades pessoais, familiares e as exigências de sua carreira. Você quer fazer todos os principais segmentos de sua vida trabalhar em conjunto para um todo integrado e, portanto, precisa de uma situação de carreira que lhe dê suficiente flexibilidade para alcançar tal integração.<br><br>Talvez você precise sacrificar alguns aspectos da sua carreira (por exemplo, uma mudança geográfica que fosse uma promoção, mas que desestruturaria toda sua situação de vida), e você define o sucesso em termos mais amplos do que simplesmente sucesso na carreira. Você sente que sua identidade está mais vinculada ao modo de viver sua vida como um todo, onde você se estabelece, como lida com sua situação familiar e como você se desenvolve, do que com qualquer trabalho ou organização.</p>
 
-    <button type="button" class="btn btn-primary btn-lg mr-2 mb-2" data-toggle="modal" data-target="#shareResults">Compartilhar resultado</button>
-    <a class="btn btn-secondary mr-2 mb-2" href="{{site.url}}">Iniciar novo teste</a>
-    <a href="https://www.roberthalf.com.br/blog/carreira/teste-ancoras-de-carreira" target="blank">Conheça mais sobre o teste</a>
+    {% include actions.html %}
   </div>
 
 

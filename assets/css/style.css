@@ -197,9 +197,16 @@ ul.share-buttons .sr-only{
   overflow: hidden;
 }
 
+form.donate {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .modal-content {
   background-color: #f1ece4;
 }
+
+
 
 @media (max-width: 576px) {
   .upform, #result {
@@ -214,3 +221,4 @@ ul.share-buttons .sr-only{
     font-size: 14px;
   }
 }
+
